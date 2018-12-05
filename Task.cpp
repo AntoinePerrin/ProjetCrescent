@@ -1,26 +1,20 @@
 #include <string>
 #include "Task.h"
+
+#include "ShortTask.h"
 using namespace std;
 
-string username, idName, type;
-string nameBatch, pathToFile;
 
 
 
+void Task::TaskManager(ShortTask Short[]) {
 
-Task Task::CreateTask(string userName, string idName, string type, string nameBatch)
-{
-	Task temp;
-	temp.userName = userName;
-	temp.idName = idName;
-	temp.type = type;
-	temp.nameBatch = nameBatch;
-	return temp;
 }
 
-void Task::ExecuteTask(Task userdata) {
-	string cmd(userdata.nameBatch);
-	system(cmd.c_str());
+
+int Task::ExecuteTask(int time) {
+	time -= 60;
+	return time;
 }
 
 Task::Task()

@@ -151,14 +151,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HugeTask.cpp" />
+    <ClCompile Include="InteractiveTask.cpp" />
+    <ClCompile Include="LargeTask.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MediumTask.cpp" />
+    <ClCompile Include="ShortTask.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test.bat" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="HugeTask.h" />
+    <ClInclude Include="InteractiveTask.h" />
+    <ClInclude Include="LargeTask.h" />
+    <ClInclude Include="MediumTask.h" />
+    <ClInclude Include="ShortTask.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
