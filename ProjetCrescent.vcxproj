@@ -154,8 +154,10 @@
     <ClCompile Include="HugeTask.cpp" />
     <ClCompile Include="InteractiveTask.cpp" />
     <ClCompile Include="LargeTask.cpp" />
+    <ClCompile Include="Machine.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MediumTask.cpp" />
+    <ClCompile Include="Scheduler.cpp" />
     <ClCompile Include="ShortTask.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="User.cpp" />
@@ -165,7 +167,9 @@
     <ClInclude Include="HugeTask.h" />
     <ClInclude Include="InteractiveTask.h" />
     <ClInclude Include="LargeTask.h" />
+    <ClInclude Include="Machine.h" />
     <ClInclude Include="MediumTask.h" />
+    <ClInclude Include="Scheduler.h" />
     <ClInclude Include="ShortTask.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="User.h" />

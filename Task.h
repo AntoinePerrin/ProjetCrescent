@@ -2,24 +2,28 @@
 #define TASK_H
 
 #include <string>
+#include "Machine.h"
+#include <vector>
 
 class Task
 {
 public:
+	int type;
+	int hour;
+	int node;
+	bool exe;
 
-	virtual void CreateTask() = 0;
-
-	void TaskManager(ShortTask Short[]);
-	int ExecuteTask(int time);
-
-
-	/*//variable
-	string userName, idName, type, nameBatch, pathToFile;
-	//function
-	Task CreateTask(string userName, string idName, string type, string nameBatch);
-	void ExecuteTask(Task userdata);*/
+	void addTask(Task task, Machine machine);
+	void ExecuteTask(Task task, Machine machine);
+	int getMaxhour(Task task);
+	bool canbelunchpertype(Task task, Machine machine);
+	int getMaxNodepertype(Task task);
+	bool ishourcorrect(Task task, Machine machine);
+	Task(int type, int node, int hour);
 	Task();
 	~Task();
+	void finishTask(Task task, Machine machine);
+	bool taskDataOK(Task task, Machine machine);
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "UserTest.h"
 #include <random>
 #include <string>
+using namespace std;
 
 string UserTest::NewRequest() {
 	string res;
@@ -18,9 +19,9 @@ string UserTest::NewRequest() {
 	if (time >= 17) {
 		res = "Huge;";
 	}
-	res += stoi(userId) + ";";
-	res += stoi(time) + ";";
-	res += "code of " + stoi(userId) + " ;";
+	res += to_string(userId) + ";";
+	res += to_string(time) + ";";
+	res += "code of " + to_string(userId) + " ;";
 
 	return res;
 }
