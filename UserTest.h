@@ -3,6 +3,6 @@
 
 class UserTest {
 	public:
-		string NewRequest();
+		std::string NewRequest();
 };
 

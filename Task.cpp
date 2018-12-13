@@ -1,12 +1,5 @@
-#include <string>
-
-#include "Machine.h"
 #include "Task.h"
 
-#include "ShortTask.h"
-#include "MediumTask.h"
-#include "LargeTask.h"
-#include "HugeTask.h"
 
 using namespace std;
 
@@ -14,29 +7,19 @@ Task::Task(){
 
 }
 
-Task::Task(int type, int node, int hour){
-	this->type = type;
-	this->node = node;
-	this->hour = hour;
-	this->exe = false;
-}
-
-Task::~Task(){
-}
-
 int Task::getMaxhour(Task task) {
 	int res = 0;
 	if (task.type == 0) {
-		res = ShortTask::maxHour;
+		res = 2;
 	}
 	if (task.type == 1) {
-		res = MediumTask::maxHour;
+		res = 8;
 	}
 	if (task.type == 2) {
-		res = LargeTask::maxHour;
+		res = 16;
 	}
 	if (task.type == 3) {
-		res = HugeTask::maxHour;
+		res = 62;
 	}
 	return res;
 }
@@ -44,89 +27,27 @@ int Task::getMaxhour(Task task) {
 int Task::getMaxNodepertype(Task task) {
 	int res = 0;
 	if (task.type == 0) {
-		res = ShortTask::maxNode;
+		res = 12;
 	}
 	if (task.type == 1) {
-		res = MediumTask::maxNode;
+		res = 36;
 	}
 	if (task.type == 2) {
-		res = LargeTask::maxNode;
+		res = 64;
 	}
 	if (task.type == 3) {
-		res = Machine::maxNode;
+		res = 128;
 	}
 	return res;
 }
 
-bool Task::taskDataOK(Task task, Machine machine) {
+bool Task::taskDataOK(Task task) {
 	bool res = false;
-	if (task.node > 0 && task.hour > 0) {
-		int hourmax = getMaxhour(task);
-		int nodeMax = getMaxNodepertype(task);
-		if (task.hour < hourmax && task.node < nodeMax) {
+	if (task.node > 0 && task.hour > 0 && task.type <4) {
+		int nodemax = task.getMaxNodepertype(task);
+		if (task.node <= nodemax) {
 			res = true;
 		}
 	}
 	return res;
 }
-
-bool Task::ishourcorrect(Task task, Machine machine) {
-	bool res = false;
-	if (task.type == 3) {
-		if (machine.getIndexDay(machine) == 5 && machine.getHour(machine) > 18) {
-			res = true;
-		}
-		if (machine.getIndexDay(machine) > 5) {
-			res = true;
-		}
-	} else {
-		if (machine.getIndexDay(machine) < 5) {
-			res = true;
-		}
-		if (machine.getIndexDay(machine) == 5) {
-			int hour;
-			if (task.type == 0) {
-				hour = ShortTask::lastHourLunch;
-			}
-			if (task.type == 1) {
-				hour = MediumTask::lastHourLunch;
-			}
-			if (task.type == 2) {
-				hour = LargeTask::lastHourLunch;
-			}
-			if (machine.getHour(machine) < hour) {
-				res = true;
-			}
-		}
-	}
-	return res;
-}
-
-bool Task::canbelunchpertype(Task task, Machine machine) {
-	return machine.getNodeLeft(machine, task) >= task.node && ishourcorrect(task, machine);
-}
-
-void Task::addTask(Task task, Machine machine) {
-	if (machine.addNode(machine, task)) {
-		task.exe = true;
-	}
-}
-
-void Task::ExecuteTask(Task task, Machine machine) {
-	if (task.hour > 1) {
-		task.hour -= 1;
-	}
-	else {
-		task.exe = false;
-		task.hour = 0;
-	}
-	machine.changeHour(machine);
-	task.timeOnNode += 1;
-}
-
-void Task::finishTask(Task task, Machine machine) {
-	if (!task.exe) {
-		machine.removeNode(machine, task);
-	}
-}
-

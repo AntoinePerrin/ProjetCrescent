@@ -1,12 +1,19 @@
 #pragma once
+
+#include <vector>
+
 class User
 {
 public:
 	std::string Name, group;
-	int studentId, Wallet, override;
-
+	int personnalId, hoursSpend, numberOfTask, hoursincelastjob;
+	double override;
+	int maxHoursPerWeekPerUser = 24;
+	
 	User();
-	~User();
-	User GetFromId(int id);
+	User(std::string name, std::string Id);
+	void AddHourUser(std::vector<User> *users);
+	double GetMoneyFromUser(User user);
+	bool IsUserKnow(int id, std::vector<User> *users);
 };
 

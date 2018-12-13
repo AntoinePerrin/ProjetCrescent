@@ -1,10 +1,15 @@
 #pragma once
+
+/*!
+ * \file LargeTask.h
+ * \brief LargeTask Class
+ * \class LargeTask
+ * This class contain all the necessary constant for the program for the large task
+ */
+
 class LargeTask
 {
 public:
-	LargeTask();
-	~LargeTask();
-
 	int const static maxNode = 64;
 	int const static maxNodeperJob = 32;
 	int const static maxHour = 16;
