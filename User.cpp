@@ -15,20 +15,27 @@ User::User()
 	this->numberOfTask = 1;
 }
 
-User::User(string name, string Id) {
+User::User(string name, string Id, string group) {
 	this->Name = name;
 	//this->personnalId = (int)Id[1,Id.size()];
 	this->personnalId = stoi(Id.substr(1, Id.size()));
 	if (Id[0] == 's') {
-		this->group = "student";
-		this->override = 1;
+		this->status = "student";
+		if (group == "SETC") {
+			this->override = 1.5;
+		} else {
+			this->override = 1;
+		}
 	} else if (Id[0] == 't') {
-		this->group = "teacher";
+		this->status = "teacher";
 		this->override = 1.5;
+		this->group = group;
 	} else if (Id[0] == 'i') {
-		this->group = "It Staff";
+		this->status = "IT Support";
 		this->override = 1;
 	}
+
+	
 	
 	this->hoursSpend = 0;
 	this->hoursincelastjob = 0;

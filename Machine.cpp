@@ -25,11 +25,9 @@ int Machine::getHour(Machine machine) {
 	return machine.hour;
 }
 
-
 void Machine::setHour(Machine *machine, int hour) {
 	(*machine).hour = hour;
 }
-
 
 int Machine::getIndexDay(Machine machine) {
 	return day;
