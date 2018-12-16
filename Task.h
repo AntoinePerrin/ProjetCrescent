@@ -19,7 +19,7 @@ public:
 	int node;			/*!< The number of node on which the task is running*/
 	bool exe;			/*!< Say if the task is running or not. If is't true the task is running*/
 	int timeOnNode;		/*!< Store the time spend on the machine*/
-	int waitingtime;	/*!< Store the time spend on the waiting list*/
+	int waitingTime;	/*!< Store the time spend on the waiting list*/
 	User user;			/*!< Link the user who ask for the task*/
 
 	//Function
@@ -58,11 +58,6 @@ public:
 *  \return Return an true if the data is good
 */
 	bool taskDataOK(Task task);
-
-
-
-	void AddHourTask(Task *task);
-
 };
 
 #endif

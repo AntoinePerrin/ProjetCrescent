@@ -12,10 +12,10 @@
 class User
 {
 public:
-	std::string Name,/*!< The name of the user*/ status,/*!< Researcher/Student or IT Staff*/ group;/*!< Store the group of the user for researcher or student*/
-	int personnalId,/*!< The personnal Id of the user*/ hoursSpend,/*!< The number of hour spend on HPC*/ numberOfTask,/*!< The number of previous task asked by the user*/ hoursincelastjob;/*!< Number of hour since the last job asked*/
+	std::string name,/*!< The name of the user*/ status,/*!< Researcher/Student or IT Staff*/ group;/*!< Store the group of the user for researcher or student*/
+	int personalId,/*!< The personnal Id of the user*/ hoursSpend,/*!< The number of hour spend on HPC*/ numberOfTask,/*!< The number of previous task asked by the user*/ hourSinceLastJob;/*!< Number of hour since the last job asked*/
 	float override;/*!< The percentage of override, if equal to 1 there is no override. This parameter allow to use the HPC more than the max hour per week*/
-	int maxHoursPerWeekPerUser = 1536;/*!< The max hour of use per week per user (24 hours * 64 nodes)*/
+	int const static maxHoursPerWeekPerUser = 1536;/*!< The max hour of use per week per user (24 hours * 64 nodes)*/
 	
 	/*!
 	*  \brief Basic initiator
