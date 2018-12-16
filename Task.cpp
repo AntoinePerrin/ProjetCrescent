@@ -1,4 +1,8 @@
 #include "Task.h"
+#include "ShortTask.h"
+#include "MediumTask.h"
+#include "LargeTask.h"
+#include "HugeTask.h"
 
 
 using namespace std;
@@ -10,16 +14,16 @@ Task::Task(){
 int Task::getMaxhour(Task task) {
 	int res = 0;
 	if (task.type == 0) {
-		res = 2;
+		res = ShortTask::maxHour;
 	}
 	if (task.type == 1) {
-		res = 8;
+		res = MediumTask::maxHour;
 	}
 	if (task.type == 2) {
-		res = 16;
+		res = LargeTask::maxHour;
 	}
 	if (task.type == 3) {
-		res = 62;
+		res = HugeTask::maxHour;
 	}
 	return res;
 }
@@ -27,16 +31,16 @@ int Task::getMaxhour(Task task) {
 int Task::getMaxNodepertype(Task task) {
 	int res = 0;
 	if (task.type == 0) {
-		res = 12;
+		res = ShortTask::maxNodeperJob;
 	}
 	if (task.type == 1) {
-		res = 36;
+		res = MediumTask::maxNodeperJob;
 	}
 	if (task.type == 2) {
-		res = 64;
+		res = LargeTask::maxNodeperJob;
 	}
 	if (task.type == 3) {
-		res = 128;
+		res = HugeTask::maxNodeperJob;
 	}
 	return res;
 }

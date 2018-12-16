@@ -4,7 +4,7 @@
 
 Machine::Machine()
 {
-	this->hour = 8;
+	this->hour = 9;
 	this->nodeUse = 0;
 }
 
@@ -13,7 +13,7 @@ void Machine::changeHour(Machine *machine) {
 		(*machine).hour += 1;
 	} else {
 		(*machine).hour = 0;
-		if (day + 1 > 7) {
+		if (day + 1 > 6) {
 			(*machine).day = 0;
 		} else {
 			(*machine).day += 1 ;

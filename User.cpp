@@ -21,6 +21,7 @@ User::User(string name, string Id, string group) {
 	this->personnalId = stoi(Id.substr(1, Id.size()));
 	if (Id[0] == 's') {
 		this->status = "student";
+		this->group = group;
 		if (group == "SETC") {
 			this->override = 1.5;
 		} else {

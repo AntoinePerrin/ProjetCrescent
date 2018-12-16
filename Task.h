@@ -14,12 +14,13 @@ class Task
 {
 public:
 	//Variable
-	int type;
-	int hour;
-	int node;
-	bool exe;
-	int timeOnNode;
-	User user;
+	int type;			/*!< The type of of the task*/
+	int hour;			/*!< The lenght of the code*/
+	int node;			/*!< The number of node on which the task is running*/
+	bool exe;			/*!< Say if the task is running or not. If is't true the task is running*/
+	int timeOnNode;		/*!< Store the time spend on the machine*/
+	int waitingtime;	/*!< Store the time spend on the waiting list*/
+	User user;			/*!< Link the user who ask for the task*/
 
 	//Function
 	/*!

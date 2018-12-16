@@ -12,11 +12,11 @@ class Machine
 {
 public:
 	//Variable
-	int hour;
-	int day;
-	int nodeUse;
-	int const static maxNode = 128;
-	int nodeForShort = 0, nodeForMedium = 0, nodeForLarge = 0, nodeForHuge = 0;
+	int hour;							/*!< The hour of the machine*/
+	int day;							/*!< The day of the machine*/
+	int nodeUse;						/*!< Number of node use*/
+	int const static maxNode = 128;		/*!< The last hour to lunch a huge task*/
+	int nodeForShort = 0,/*!< Number of node use for the short task*/ nodeForMedium = 0,/*!< Number of node use for the medium task*/ nodeForLarge = 0,/*!< Number of node use for the large task*/ nodeForHuge = 0;/*!< Number of node use for the huge task*/
 
 	//Function
 	/*!
