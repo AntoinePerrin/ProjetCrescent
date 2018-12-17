@@ -5,13 +5,15 @@ using namespace std;
 
 string UserTest::NewRequest() {
 	string res;
-	res = "Panda;";
+	/*res = "Antoine Perrin-Valery;";
 	res += "s";
-	int userId = rand() % 300000;
+	//int userId = rand() % 300000;
+	int userId = 299405;
 	res += to_string(userId) + ";";
 	res += "SETC;";
 
-	int time = rand() % 30;
+	//int time = rand() % 30;
+	int time = 10;
 	int nodes;
 	if (time < 1) {
 		nodes = rand() % 2;
@@ -29,12 +31,11 @@ string UserTest::NewRequest() {
 		nodes = rand() % 128;
 		res += "3;" + to_string(nodes) + ';';
 	}
-	res += to_string(time) + ";";
+	res += to_string(time) + ";";*/
 
 
 	//res += "3;2;10;";
-	//res = "Panda;s299405;     2;64;54";
-	//res = "Panda;student;299405;1;2;64;14;";
-	//res = "Panda;s299405;3;64;14;";
+	//res = "Panda;s2   99405;   SETC;2;10;   14;";
+	res = "Panda;s299405;SETC;2;1;14;";
 	return res;
 }

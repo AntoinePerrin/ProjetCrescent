@@ -6,19 +6,19 @@ using namespace std;
 
 User::User()
 {
-	this->Name = "null";
+	this->name = "null";
 	this->hoursSpend = 0;
-	this->personnalId = 0;
+	this->personalId = 0;
 	this->group = "null";
 	this->override = 1;
-	this->hoursincelastjob = 0;
+	this->hourSinceLastJob = 0;
 	this->numberOfTask = 1;
 }
 
 User::User(string name, string Id, string group) {
-	this->Name = name;
+	this->name = name;
 	//this->personnalId = (int)Id[1,Id.size()];
-	this->personnalId = stoi(Id.substr(1, Id.size()));
+	this->personalId = stoi(Id.substr(1, Id.size()));
 	if (Id[0] == 's') {
 		this->status = "student";
 		this->group = group;
@@ -39,14 +39,14 @@ User::User(string name, string Id, string group) {
 	
 	
 	this->hoursSpend = 0;
-	this->hoursincelastjob = 0;
+	this->hourSinceLastJob = 0;
 	this->numberOfTask = 1;
 }
 
 bool User::IsUserKnow(int id, vector<User> *users) {
 	bool res = false;
 	for (unsigned int i = 0; i < (*users).size(); i++) {
-		if ((*users)[i].personnalId == id) {
+		if ((*users)[i].personalId == id) {
 			res = true;
 		}
 	}
@@ -55,7 +55,7 @@ bool User::IsUserKnow(int id, vector<User> *users) {
 
 void User::AddHourUser(vector<User> *users) {
 	for (unsigned int i = 0; i < (*users).size(); i++) {
-		(*users)[i].hoursincelastjob += 1;
+		(*users)[i].hourSinceLastJob += 1;
 	}
 	
 }
